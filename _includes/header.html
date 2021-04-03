@@ -29,6 +29,7 @@
 			</div>
 		</div>
 
+		<!-- old version
 		<div class="projects-menu">
 			<ul class="menu__list">
 				{% for project in site.projects reversed %}
@@ -38,6 +39,19 @@
 				{% endfor %}
 			</ul>
 		</div>
+		-->
+
+		<div class="projects-menu">
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					{% for item in site.data.settings.menu_settings.menu_categories %}
+					<li class="menu__list__item">
+						<a href="{{ item.url | relative_url }}" class="menu__list__item__link">{{ item.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 
 		<div class="header__lower">
 
@@ -45,7 +59,6 @@
 
 			<div class="footer__copyright">
 				<span>© {{ 'now' | date: "%Y" }} {{ site.data.settings.basic_settings.site_title }}</span>
-				<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
 			</div>
 
 		</div>
